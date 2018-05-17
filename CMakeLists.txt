@@ -22,7 +22,4 @@ endif()
 set(SOS_LIB_NAME compiler_rt_sos)
 project(${SOS_LIB_NAME} CXX C ASM)
 
-install(DIRECTORY newlib/include/ DESTINATION include)
-set(SOS_LIB_INCLUDE_DIRECTORIES include)
-
 include( ${CMAKE_SOURCE_DIR}/${SOS_BUILD_CONFIG}.cmake )
