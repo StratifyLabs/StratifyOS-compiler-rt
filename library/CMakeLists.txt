@@ -40,7 +40,7 @@ sos_sdk_library_add_arch_targets("${RELEASE_OPTIONS}" ${SOS_ARCH} "")
 install(FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/compiler_rt.cmake
 	DESTINATION
-	cmake/targets)
+	${SOS_SDK_PATH}/cmake/targets)
 
 add_custom_target(
 	format
