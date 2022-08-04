@@ -1,10 +1,10 @@
 
 #Add sources to the project
-sos_sdk_add_subdirectory(PRIVATE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src)
+cmsdk_add_subdirectory(PRIVATE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 set(COMPILER_RT_NAME ${PROJECT_NAME})
 
-sos_sdk_library_target(RELEASE ${COMPILER_RT_NAME} "" release ${SOS_ARCH})
+cmsdk_library_target(RELEASE ${COMPILER_RT_NAME} "" release ${CMSDK_ARCH})
 
 add_library(${RELEASE_TARGET} STATIC)
 
@@ -31,11 +31,11 @@ target_include_directories(${RELEASE_TARGET}
 	PRIVATE
 	)
 
-sos_sdk_library_target(DEBUG ${COMPILER_RT_NAME} "" debug ${SOS_ARCH})
+cmsdk_library_target(DEBUG ${COMPILER_RT_NAME} "" debug ${CMSDK_ARCH})
 add_library(${DEBUG_TARGET} STATIC)
-sos_sdk_copy_target(${RELEASE_TARGET} ${DEBUG_TARGET})
-sos_sdk_library_add_arch_targets("${DEBUG_OPTIONS}" ${SOS_ARCH} "")
-sos_sdk_library_add_arch_targets("${RELEASE_OPTIONS}" ${SOS_ARCH} "")
+cmsdk_copy_target(${RELEASE_TARGET} ${DEBUG_TARGET})
+cmsdk_library_add_arch_targets("${DEBUG_OPTIONS}" ${CMSDK_ARCH} "")
+cmsdk_library_add_arch_targets("${RELEASE_OPTIONS}" ${CMSDK_ARCH} "")
 
 install(FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/compiler_rt.cmake
