@@ -20,9 +20,11 @@ cmsdk2_copy_target(
 	SOURCE ${RELEASE_TARGET}
 	DESTINATION ${DEBUG_TARGET})
 cmsdk2_library_add_dependencies(
-	TARGET ${RELEASE_TARGET})
+	TARGET ${RELEASE_TARGET}
+	DEPENDENCIES StratifyOS_interface)
 cmsdk2_library_add_dependencies(
-	TARGET ${DEBUG_TARGET})
+	TARGET ${DEBUG_TARGET}
+	DEPENDENCIES StratifyOS_interface)
 install(FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/compiler_rt.cmake
 	DESTINATION
