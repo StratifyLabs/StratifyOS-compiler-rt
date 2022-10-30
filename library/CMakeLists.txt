@@ -1,3 +1,4 @@
+set(${PROJECT_NAME}_VERSION ${PROJECT_VERSION} CACHE INTERNAL "StratifyOS compiler-rt project version")
 cmsdk2_add_library(
 	NAME ${PROJECT_NAME}
 	CONFIG release
